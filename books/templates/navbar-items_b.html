@@ -1,0 +1,22 @@
+<ul class="navbar-nav d-flex align-items-center">
+  <li class="nav-item">
+    <a href="{% url 'index'%}" class="nav-link active text-white">Home</a>
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'showphone' %}" class="nav-link text-white">phones</a>
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'showBooks' %}" class="nav-link text-white">Books</a>
+  </li>
+  {% comment %}
+  <li class="nav-item">
+    <a class="nav-link text-white">Pricing</a>
+  </li>
+  {% endcomment %} {% if request.user.is_authenticated %}
+  <li class="nav-item ml-auto">
+    <a href="{%url 'checkout_b' %}" class="nav-link">
+      Cart <span class="badge badge-pill badge-primary">{{ cart_count }}</span>
+    </a>
+  </li>
+  {% endif %}
+</ul>

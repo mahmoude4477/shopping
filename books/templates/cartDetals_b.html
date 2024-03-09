@@ -1,0 +1,22 @@
+<ul class="list-group mb-3">
+  {% for cartitem in cartD %}
+  <li class="list-group-item d-flex justify-content-between lh-sm">
+    <div>
+      <h6 class="my-0">{{cartitem.bookId.name}}</h6>
+      <small class="text-body-secondary">{{cartitem.qty}}</small>
+    </div>
+    <div>
+      <span class="text-body-secondary">${{cartitem.bookId.price}}</span>
+      <a
+        class="btn btn-danger"
+        href="{% url 'remove_from_cart_b' id=cartitem.id %}"
+        >remove</a
+      >
+    </div>
+  </li>
+  {% endfor %}
+  <li class="list-group-item d-flex justify-content-between">
+    <span>Total (SA)</span>
+    <strong>${{total}}</strong>
+  </li>
+</ul>

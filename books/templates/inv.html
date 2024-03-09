@@ -1,0 +1,25 @@
+{% extends "base_B.html" %} {% block content %}
+
+<div class="card">
+  <div class="card-body mx-4">
+    <div class="container">
+      <p class="my-5 mx-5" style="font-size: 30px">Thank for your purchase</p>
+      <div class="row">
+        <ul class="list-unstyled">
+          <li class="">user id = {{done.id}}</li>
+          <li class="text-muted mt-1"><span class="">Invoice</span> #12345</li>
+          <li class="mt-1">{% now "y/m/d" %}</li>
+        </ul>
+        <hr />
+        <div class="col-xl-10">
+          <p>{{done.bookId.name}}</p>
+        </div>
+        <div class="col-xl-2">
+          <p class="float-end">${{done.bookId.price}}</p>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

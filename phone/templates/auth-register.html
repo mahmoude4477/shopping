@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+<div class="d-flex flex-column mt-5 justify-content-center align-items-center">
+  <form action="" class="form-group" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input class="btn mt-1 btn-success" type="submit" value="ٌRegister" />
+  </form>
+  <div class="d-flex flex-row gap-2">
+    <p>dont have account?</p>
+    <a href="{% url 'auth-register' %}" class=""> Register</a>
+  </div>
+</div>
+
+{% endblock %}
